@@ -1,3 +1,4 @@
+
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import { AppCard } from "../../../../app/ui/components/baseComponent/AppCard";
@@ -11,17 +12,12 @@ describe("AppCard", () => {
     );
 
     const child = screen.getByTestId("child");
-
-    // ❌ INTENTIONAL FAILURE
-    expect(child.textContent).toBe("Hello WRONG TEXT");
+    expect(child).toBeDefined();
+    expect(child.textContent).toBe("Hello Card");
   });
 
   it("renders header title correctly", () => {
     render(<AppCard header={{ title: "My Header" }} />);
-
-    // ❌ INTENTIONAL FAILURE
-    expect(screen.getByText("Wrong Header")).toBeDefined();
+    expect(screen.getByText("My Header")).toBeDefined();
   });
 });
-
-

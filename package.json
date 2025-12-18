@@ -11,6 +11,7 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "prepare": "husky"
+
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

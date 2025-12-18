@@ -1,4 +1,10 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
+#!/usr/bin/env sh
+echo "[pre-commit] Running tests (failures will block commit). See: VS Code Output → Git for full logs."
 npm test
+status=$?
+
+if [ $status -ne 0 ]; then
+  # Print to stdout (and not only stderr) so VS Code surfaces it more reliably.
+  echo "[pre-commit] Tests failed — commit blocked."
+  exit $status
+fi
