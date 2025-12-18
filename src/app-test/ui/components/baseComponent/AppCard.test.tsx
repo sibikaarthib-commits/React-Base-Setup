@@ -23,3 +23,5 @@ describe("AppCard", () => {
     expect(screen.getByText("Wrong Header")).toBeDefined();
   });
 });
+
+
