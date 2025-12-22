@@ -1,4 +1,4 @@
-import type { BrandKey } from "../../ui/theme/theme";
+import type { BrandKey } from "../../ui/themes/theme";
 
 export interface AppConfig {
   brand: BrandKey;

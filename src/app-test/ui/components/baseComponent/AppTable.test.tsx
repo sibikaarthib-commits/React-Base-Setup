@@ -15,7 +15,7 @@ describe("AppTable", () => {
       <AppTable<SampleRow>
         rows={rows}
         columns={[{ key: "name", header: "Name" }]}
-        getRowKey={(row:any) => row.id}
+        getRowKey={(row: any) => row.id}
       />
     );
 
@@ -28,7 +28,7 @@ describe("AppTable", () => {
       <AppTable<SampleRow>
         rows={rows}
         columns={[{ key: "name", header: "Name" }]}
-        getRowKey={(row:any) => row.id}
+        getRowKey={(row: any) => row.id}
       />
     );
 

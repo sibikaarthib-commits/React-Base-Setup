@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { store } from "../../app/store"; // adjust path if needed
+import { store } from "../../app/store";
 
 describe("Redux store", () => {
   it("should have the correct initial state", () => {

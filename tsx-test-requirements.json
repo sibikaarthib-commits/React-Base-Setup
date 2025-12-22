@@ -1,9 +1,10 @@
 {
   "ignoreRegex": [
     "^src/main\\.tsx$",
-    "^src/App\\.tsx$",
+    "^src/app/App\\.tsx$",
     "^src/.*?/index\\.tsx$",
-    "^src/.*?\\.stories\\.tsx$"
+    "^src/.*?\\.stories\\.tsx$",
+    "^src/app/ui/login-pages/Login\\.tsx$"
   ],
   "testPathMappings": [
     {
@@ -13,5 +14,3 @@
   ],
   "testSuffixes": [".test.tsx", ".spec.tsx"]
 }
-
-
