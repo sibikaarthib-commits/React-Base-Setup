@@ -1,18 +1,21 @@
 #!/usr/bin/env sh
-echo "[pre-commit] Checking staged TSX files have matching tests..."
 node scripts/check-tsx-tests.mjs
 check_status=$?
 if [ $check_status -ne 0 ]; then
-  echo "[pre-commit] Missing tests — commit blocked."
   exit $check_status
 fi
 
-echo "[pre-commit] Running tests (failures will block commit). See: VS Code Output → Git for full logs."
-npm test
+# Capture test output and print it only if tests fail, so the first visible line is the failure reason.
+tmpfile=".git/.pre-commit-npm-test.log"
+npm test --silent >"$tmpfile" 2>&1
 status=$?
 
 if [ $status -ne 0 ]; then
   # Print to stdout (and not only stderr) so VS Code surfaces it more reliably.
   echo "[pre-commit] Tests failed — commit blocked."
+  cat "$tmpfile"
+  rm -f "$tmpfile"
   exit $status
 fi
+
+rm -f "$tmpfile"

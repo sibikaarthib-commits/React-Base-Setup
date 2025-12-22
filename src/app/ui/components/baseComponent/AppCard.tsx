@@ -85,3 +85,4 @@ export const AppCard: React.FC<AppCardProps> = ({
     </Card>
   );
 };
+

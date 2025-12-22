@@ -5,6 +5,12 @@
     "^src/.*?/index\\.tsx$",
     "^src/.*?\\.stories\\.tsx$"
   ],
+  "testPathMappings": [
+    {
+      "from": "^src/app/",
+      "to": "src/app-test/"
+    }
+  ],
   "testSuffixes": [".test.tsx", ".spec.tsx"]
 }
 
