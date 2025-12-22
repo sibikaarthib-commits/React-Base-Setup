@@ -1,0 +1,11 @@
+{
+  "ignoreRegex": [
+    "^src/main\\.tsx$",
+    "^src/App\\.tsx$",
+    "^src/.*?/index\\.tsx$",
+    "^src/.*?\\.stories\\.tsx$"
+  ],
+  "testSuffixes": [".test.tsx", ".spec.tsx"]
+}
+
+

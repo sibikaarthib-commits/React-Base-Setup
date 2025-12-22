@@ -1,4 +1,12 @@
 #!/usr/bin/env sh
+echo "[pre-commit] Checking staged TSX files have matching tests..."
+node scripts/check-tsx-tests.mjs
+check_status=$?
+if [ $check_status -ne 0 ]; then
+  echo "[pre-commit] Missing tests — commit blocked."
+  exit $check_status
+fi
+
 echo "[pre-commit] Running tests (failures will block commit). See: VS Code Output → Git for full logs."
 npm test
 status=$?
