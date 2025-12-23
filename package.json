@@ -8,10 +8,11 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
+    "sonar": "sonarqube-scanner",
     "prepare": "husky"
-
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -19,6 +20,7 @@
     "@mui/material": "^7.3.6",
     "@mui/x-charts": "^8.22.0",
     "@reduxjs/toolkit": "^2.11.1",
+    "axios": "^1.13.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-redux": "^9.2.0",
@@ -32,6 +34,7 @@
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
+    "@vitest/coverage-v8": "^4.0.15",
     "autoprefixer": "^10.4.22",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
@@ -40,6 +43,7 @@
     "husky": "^9.1.7",
     "jsdom": "^27.3.0",
     "postcss": "^8.5.6",
+    "sonarqube-scanner": "^4.2.8",
     "tailwindcss": "^3.4.19",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",

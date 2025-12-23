@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import type { RootState } from "../../store";
+import { getApiErrorMessage, loginApi } from "../../api/authApi";
 
 export interface LoginRequest {
   email: string;
@@ -23,15 +24,14 @@ const initialState: AuthState = {
   error: null,
 };
 
-// fake async login; later replace with real API call
 export const login = createAsyncThunk<AuthUser, LoginRequest>(
   "auth/login",
   async (payload, { rejectWithValue }) => {
-    await new Promise((r) => setTimeout(r, 500));
-    if (payload.email === "admin@example.com" && payload.password === "admin") {
-      return { id: "1", email: payload.email };
+    try {
+      return await loginApi(payload);
+    } catch (e) {
+      return rejectWithValue(getApiErrorMessage(e));
     }
-    return rejectWithValue("Invalid email or password");
   }
 );
 

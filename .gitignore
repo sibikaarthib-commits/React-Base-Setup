@@ -25,3 +25,7 @@ dist-ssr
 
 # Accidental Husky artifact folder (not used)
 --version/
+
+# Sonar / coverage
+.scannerwork/
+coverage/
