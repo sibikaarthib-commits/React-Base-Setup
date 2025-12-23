@@ -5,5 +5,5 @@ export interface AppConfig {
 }
 
 export const appConfig: AppConfig = {
-  brand: "dominos",
+  brand: "wineconnection",
 };
